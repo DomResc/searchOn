@@ -1,0 +1,23 @@
+{
+    "name": "SearchOn",
+    "version": "1.0",
+    "author": "Domenico Rescigno",
+    "description": "Adds a custom search button within the right-click menu",
+    "permissions": [
+        "contextMenus",
+        "storage",
+        "tabs"
+    ],
+    "icons": {
+        "16": "icons/logo_16.png",
+        "20": "icons/logo_20.png",
+        "40": "icons/logo_40.png"
+    },
+    "background": {
+        "scripts": [
+            "src/main.js"
+        ],
+        "persistent": true
+    },
+    "options_page": "src/options.html"
+}
