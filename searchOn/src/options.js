@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     browser.storage.local.get(null, function (result) {
 
         if (result.searchName && result.queryUrl) {
@@ -7,14 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         document.getElementById('saveButton').addEventListener('click', function () {
+
             const name = this.form.searchName.value
             const url = this.form.queryUrl.value
 
-            console.log("pre if" + name)
-
             if (name.length > 0 && url.length > 0) {
-                console.log("post if" + name)
-                
                 browser.storage.local.set({
                     searchName: name,
                     queryUrl: url
@@ -22,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 browser.storage.local.get(null, function (result) {
                     name = result.searchName
-
                     browser.contextMenus.update('context_menus_search', {
                         title: `Search "%s" on ${name}`,
                     })
