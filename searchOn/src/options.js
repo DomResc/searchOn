@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     browser.storage.local.get(null, function (result) {
 
-        if (result.searchName !== '' && result.queryUrl !== '') {
+        if (result.searchName && result.queryUrl) {
             document.getElementById('searchName').value = result.searchName
             document.getElementById('queryUrl').value = result.queryUrl
         }
@@ -10,8 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const name = this.form.searchName.value
             const url = this.form.queryUrl.value
 
-            if (name !== '' && url !== '') {
+            console.log("pre if" + name)
 
+            if (name.length > 0 && url.length > 0) {
+                console.log("post if" + name)
+                
                 browser.storage.local.set({
                     searchName: name,
                     queryUrl: url

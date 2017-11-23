@@ -3,11 +3,7 @@ function init() {
         let name = ''
         let url = ''
 
-        if (result.searchName !== '') {
-            name = result.searchName
-        } else {
-            name = 'Google'
-        }
+        result.searchName ? name = result.searchName : name = 'Google'
 
         browser.contextMenus.create({
             id: 'context_menus_search',
@@ -16,11 +12,7 @@ function init() {
             onclick: function (info, tab) {
                 browser.storage.local.get(null, function (result) {
 
-                    if (result.queryUrl !== '') {
-                        url = result.queryUrl
-                    } else {
-                        url = 'https://www.google.com/search?q='
-                    }
+                    result.queryUrl ? url = result.queryUrl : url = 'https://www.google.com/search?q='
 
                     browser.tabs.create({
                         url: url + info.selectionText
