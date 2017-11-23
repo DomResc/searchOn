@@ -1,4 +1,4 @@
-# SearchOn
+# searchOn
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/domresc)
 
