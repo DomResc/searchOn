@@ -3,7 +3,7 @@ function init() {
         let name = ''
         let url = ''
 
-        if (result.searchName.length) {
+        if (result.searchName !== '') {
             name = result.searchName
         } else {
             name = 'Google'
@@ -16,7 +16,7 @@ function init() {
             onclick: function (info, tab) {
                 browser.storage.local.get(null, function (result) {
 
-                    if (result.queryUrl.length) {
+                    if (result.queryUrl !== '') {
                         url = result.queryUrl
                     } else {
                         url = 'https://www.google.com/search?q='
